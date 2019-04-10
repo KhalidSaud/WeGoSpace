@@ -1,0 +1,6 @@
+{
+  "appId": "com.arabictechnologies.WeGoSpace",
+  "appName": "WeGoSpaceMobile",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

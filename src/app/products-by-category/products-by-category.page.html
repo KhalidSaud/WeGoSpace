@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title [innerHTML]="category_name"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngFor="let product of products">
+      <ion-item *ngIf="product.status == 'publish'">
+          <ion-thumbnail slot="start">
+            <ion-img [src]="product.images[0].src"></ion-img>
+          </ion-thumbnail>
+          <ion-label text-wrap>
+            <h2>{{ product.name }}</h2>
+            <p>
+              <span [innerHTML]="product.short_description.substr(0, 550) + '...'"></span>
+              <span [innerHTML]="product.price_html"></span>
+            </p>
+          </ion-label>
+          <ion-button ion-button icon clear item-right>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
